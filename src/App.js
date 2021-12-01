@@ -11,6 +11,8 @@ function App() {
   const [weather, setWeather] = useState(null);
 
   const getApi = () => {
+    // localStorage.setItem("zipCode", zipState.value)
+    // let searchedZip = localStorage.getItem("zipCode");
     fetch(`https://api.weatherapi.com/v1/forecast.json?key=61fe33ab5ebe40fab45231457212211&q=${zipState.value}&days=3&aqi=yes`)
     .then((res) => res.json())
     .then((json) => {
@@ -22,6 +24,7 @@ function App() {
   const handleSubmit = ev => {
     ev.preventDefault();
     setZipState({value: ev.target.firstChild.value});
+    console.log(zipState)
     getApi();
   }
 

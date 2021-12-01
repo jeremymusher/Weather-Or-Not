@@ -29,7 +29,7 @@ function Current({weather}) {
       </div>
       </div>
     </div>
-  : <div className="current"><h1>Sorry no location found with that postal code. please try Again with another location</h1></div>
+  : <div className="current"><h1>Sorry no location found with that postal code. Please try again with another location.</h1></div>
   );
 }
 
