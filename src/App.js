@@ -6,22 +6,29 @@ import React, { useState } from "react";
 
 function App() {
 
-  const initialZipState = "80501";
+  const initialZipState = {value: "80501"};
   const [zipState, setZipState] = useState(initialZipState);
+  const [weather, setWeather] = useState(null);
 
+  const getApi = () => {
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=61fe33ab5ebe40fab45231457212211&q=${zipState.value}&days=3&aqi=yes`)
+    .then((res) => res.json())
+    .then((json) => {
+      setWeather(json);
+    })
+    .catch(console.error);
+  }
+  
   const handleSubmit = ev => {
     ev.preventDefault();
-    setZipState(ev.target.value);
+    setZipState({value: ev.target.firstChild.value});
+    getApi();
   }
 
   return (
     <div className ="app">
-      <div className ="header">
-        <Header zipFunc={handleSubmit}/>
-      </div>
-      <div className="Forecast">
-        <Forecast zip={zipState}/>
-      </div>
+        <Header zipFunc={handleSubmit} getApi={getApi}/>
+        <Forecast getApi={getApi} weather={weather}/>
     </div>
   );
 }

@@ -4,9 +4,9 @@ function Header(props) {
 
     return (
         <div>
-            <form onSubmit = {props.handleSubmit}>
+            <form onSubmit={props.zipFunc}>
                 <input type="text" placeholder="Search Using Postal Code"/>
-                <button type="submit" >Search</button>
+                <button type="submit">Search</button>
             </form>
         </div>
     );

@@ -2,8 +2,8 @@ import React from "react";
 
 function Current({weather}) {
   return (
+    weather.location ?
     <div className="current">
-      <h1>Current Test</h1>
       <div className="currentConditions">
       <h3 id="currentTitle">
         Current Weather Conditions in {weather.location.name}, {weather.location.region}
@@ -29,6 +29,7 @@ function Current({weather}) {
       </div>
       </div>
     </div>
+  : <div className="current"><h1>Sorry no location found with that postal code. please try Again with another location</h1></div>
   );
 }
 
