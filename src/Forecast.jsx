@@ -9,7 +9,7 @@ function Forecast({weather, getApi}) {
   
     return (
         weather &&
-        <div>
+        <div className = "forecast">
             <Route exact path = "/" render ={(props) => (<Current {...props} weather={weather} />)} />
             <Route exact path = "/threeday" render ={(props) => (<ThreeDay {...props} weather={weather} />)} />
             <Route exact path = "/hourly" render ={(props) => (<Hourly {...props} weather={weather} />)} />

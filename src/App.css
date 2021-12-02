@@ -1,12 +1,28 @@
-.App {
-  text-align: center;
+html {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: stretch;
+}
+.forecast{
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+}
+.form, .buttons{
+  margin-bottom: 1%;
+}
+.form{
+  margin-top: 1%;
 }
 .current{
   display: flex;
   flex-direction: column;
+  justify-self: flex-end;
   border: 1px;
   border-style: ridge;
   border-color: black;
+  width: fit-content;
 }
 .currentConditions {
   display: flex;
@@ -35,6 +51,20 @@ justify-content:space-evenly
   justify-content: center;
   width: 80vw;
 }
-#conditions img{
-  min-height: 50%;
+img{
+  height: 50%;
+
+}
+.header{
+align-items: center;  
+display: flex;
+flex-direction: column;
+}
+.hourly{
+  width: 80vw;
+}
+.nthHour{
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-evenly;
 }

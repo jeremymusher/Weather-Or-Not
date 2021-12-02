@@ -24,7 +24,8 @@ function Current({weather}) {
         <h3>Wind {weather.current.wind_dir} {weather.current.wind_mph}mph</h3>
         <h3>Wind Gusts {weather.current.gust_mph}mph</h3>
         {weather.forecast.forecastday[0].day.daily_chance_of_snow > 0 ? <h3>Chance of Snow {weather.forecast.forecastday[0].day.daily_chance_of_snow}%</h3> : null}
-        {weather.forecast.forecastday[0].day.daily_chance_of_rain > 0 ? <h3>Chance of Rain {weather.forecast.forecastday[0].day.daily_chance_of_rain}%</h3> : null}
+        <h3>Chance of Rain {weather.forecast.forecastday[0].day.daily_chance_of_rain}%</h3>
+        <h3>Humidity {weather.current.humidity}%</h3>
       </div>
       </div>
       </div>
