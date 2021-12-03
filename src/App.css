@@ -1,13 +1,22 @@
+
 html {
   display: flex;
   flex-direction: column;
-  height: 100%;
   align-items: stretch;
+  min-height: 100vh;
+/* background gradient created using https://cssgradient.io/ */
+  background: rgb(3,45,103);
+  background: linear-gradient(0deg, rgba(3,45,103,0.9766281512605042) 0%, rgba(48,58,97,0.8785889355742297) 23%, rgba(0,212,255,1) 100%);
+}
+body{
+  font-family: 'Arial', sans-serif;
+  background-repeat: no-repeat;
 }
 .forecast{
   display: flex;
   justify-content: center;
   padding: 1%;
+  margin-top: 0%;
 }
 .form, .buttons{
   margin-bottom: 1%;
@@ -19,9 +28,6 @@ html {
   display: flex;
   flex-direction: column;
   justify-self: flex-end;
-  border: 1px;
-  border-style: ridge;
-  border-color: black;
   width: fit-content;
 }
 .currentConditions {
@@ -30,30 +36,43 @@ html {
   align-items: center;
   width: 80vw;
   margin: auto;
-  border: 1px;
-  border-style: ridge;
-  border-color: black;
 }
 .currentInfo {
 display: flex;
 flex-direction: column;
-padding: 2%;
 border: 1px;
-border-style: ridge;
-border-color: black;
-width: 33%;
+border-radius: 10%;
+width: 25%;
 align-items: center;
-justify-content:space-evenly
-
+justify-content:space-evenly;
+background-color: whitesmoke;
+}
+#temps.currentInfo {
+  display: grid;
+  grid-template-rows: 3fr 1fr 1fr 1fr;
+  text-align: center;
+}
+#temps.currentInfo h1{
+  font-size: 3em;
+  border-color: black;
+  border-style: solid;
+  border: 2px;
 }
 .cards {
   display: flex;
   justify-content: center;
   width: 80vw;
+  justify-content: space-around;
+  padding: 2%;
+  min-height: 65vh;
 }
 img{
   height: 50%;
-
+}
+.nthHour img{
+  height: auto;
+  justify-self: center;
+  align-self: center;
 }
 .header{
 align-items: center;  
@@ -64,7 +83,46 @@ flex-direction: column;
   width: 80vw;
 }
 .nthHour{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  text-align: center;
+  border-bottom: black;
+  border-bottom-style: groove;
+  border-bottom-width: 2px;
+  background-color: whitesmoke;
+}
+.hourlyConditions{
   display: flex;
-  flex-direction: row; 
-  justify-content: space-evenly;
+}
+.nthHour.labels{
+  display: grid;
+  grid-template-columns: 1.05fr 0.949fr 1fr 1fr 1fr 1fr 1fr;
+}
+.nthHour.labels p{
+  font-size: 1.3em;
+}
+#forecastTitle{
+  text-align: center;
+}
+html body{
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+}
+.dayByDay{
+display: grid;
+grid-template-rows: 1fr 1fr;
+justify-items: center;
+width: 100%;
+}
+.highLow{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.dayByDay h3{
+  margin: 2%;
+}
+.currentInfo.daily h2{
+  margin: 2%;
 }

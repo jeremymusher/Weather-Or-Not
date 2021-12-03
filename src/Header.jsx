@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Header(props) {
   return (
     <div className ="header">
-      <form onSubmit={props.zipFunc} className = "form">
+      <form onSubmit={props.handleSubmit} className = "form">
         <input type="text" placeholder="Search Using Postal Code" />
         <button type="submit">Search</button>
       </form>

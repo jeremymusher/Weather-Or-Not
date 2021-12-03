@@ -3,17 +3,29 @@ import React from 'react';
 function Hourly({weather}) {
     return (
         <div className="hourly">
+            <h3 id="forecastTitle">Today's Hourly Conditions in {weather.location.name}, {weather.location.region}</h3>
+            <div className = "nthHour labels">
+                <p>Time</p>
+                <p>Conditions</p>
+                <p>Temperature</p>
+                <p>Feels Like</p>
+                <p>Precipitation</p>
+                <p>Amount</p>
+                <p>Humidity</p>
+            </div>
          {weather.forecast.forecastday[0].hour.map((hour)=>
             {return (
-            <div className = "nthHour">
-                <h2>{hour.time.substr(11, 5)}</h2>
+            <div className = "nthHour" key = {hour.time.substr(11, 5)}>
+                <p>{hour.time.substr(11, 5)}</p>
+                <div className = "hourlyConditions">
                 <img src ={hour.condition.icon} alt = "hourly condition" className="hourlyIcon"></img>
-                <h2>{hour.condition.text}</h2>
-                <h2>{hour.temp_f}°F</h2>
-                <h2>{hour.feelslike_f}°F</h2>
-                {hour.chance_of_snow >= hour.chance_of_rain ? <h2>{hour.chance_of_snow}%</h2> : <h2>{hour.chance_of_rain}</h2>}
-                <h2>{hour.precip_in}in</h2>
-                <h2>{hour.humidity}%</h2>
+                <p>{hour.condition.text}</p>
+                </div>
+                <p>{hour.temp_f}°F</p>
+                <p>{hour.feelslike_f}°F</p>
+                {hour.chance_of_snow > hour.chance_of_rain ? <p>{hour.chance_of_snow} %</p> : <p>{hour.chance_of_rain} %</p>}
+                <p>{hour.precip_in} in</p>
+                <p>{hour.humidity} %</p>
             </div>
             )}
          )}

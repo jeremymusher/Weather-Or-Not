@@ -5,12 +5,14 @@ function Current({weather}) {
     weather.location ?
     <div className="current">
       <div className="currentConditions">
-      <h3 id="currentTitle">
+      <h3 id="forecastTitle">
         Current Weather Conditions in {weather.location.name}, {weather.location.region}
       </h3>
       <div className = "cards">
       <div className="currentInfo" id="temps">
-        <h1>{weather.current.temp_f}°F</h1>
+        <div className = "currentTemp">
+          <h1>{weather.current.temp_f}°F</h1>
+        </div>
         <h2>High {weather.forecast.forecastday[0].day.maxtemp_f}°F</h2>
         <h2>Low {weather.forecast.forecastday[0].day.mintemp_f}°F </h2>
         <h3>Feels Like {weather.current.feelslike_f}°F</h3>
