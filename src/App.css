@@ -14,7 +14,6 @@ html {
 }
 body {
   font-family: "Arial", sans-serif;
-  background-repeat: no-repeat;
 }
 .forecast {
   display: flex;
@@ -24,6 +23,10 @@ body {
 }
 form {
   display: flex;
+  justify-content: center;
+}
+.title{
+  float: left;
 }
 input {
   border: 2px solid black;

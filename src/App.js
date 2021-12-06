@@ -11,7 +11,7 @@ function App() {
     if (searchedZip == null) {
     searchedZip = "80501"
     }
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=61fe33ab5ebe40fab45231457212211&q=${searchedZip}&days=3&aqi=yes`)
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${searchedZip}&days=3&aqi=yes`)
     .then((res) => res.json())
     .then((json) => {
       setWeather(json);
