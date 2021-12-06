@@ -5,7 +5,7 @@ function Header(props) {
   return (
     <div className ="header">
       <form onSubmit={props.handleSubmit} className = "form">
-        <input type="text" placeholder="Search Using Postal Code" />
+        <input type="text" placeholder="Enter Postal Code" />
         <button type="submit">Search</button>
       </form>
       <div className = "buttons">

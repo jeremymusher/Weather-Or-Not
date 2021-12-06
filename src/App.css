@@ -1,30 +1,36 @@
-
 html {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   min-height: 100vh;
-/* background gradient created using https://cssgradient.io/ */
-  background: rgb(3,45,103);
-  background: linear-gradient(0deg, rgba(3,45,103,0.9766281512605042) 0%, rgba(48,58,97,0.8785889355742297) 23%, rgba(0,212,255,1) 100%);
+  /* background gradient created using https://cssgradient.io/ */
+  background: rgb(3, 45, 103);
+  background: linear-gradient(
+    0deg,
+    rgba(3, 45, 103, 0.9766281512605042) 0%,
+    rgba(48, 58, 97, 0.8785889355742297) 23%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
-body{
-  font-family: 'Arial', sans-serif;
+body {
+  font-family: "Arial", sans-serif;
   background-repeat: no-repeat;
 }
-.forecast{
+.forecast {
   display: flex;
   justify-content: center;
   padding: 1%;
   margin-top: 0%;
 }
-.form, .buttons{
-  margin-bottom: 1%;
+form {
+  display: flex;
 }
-.form{
-  margin-top: 1%;
+input {
+  border: 2px solid black;
+  border-radius: 4px;
+  font-size: x-large;
 }
-.current{
+.current {
   display: flex;
   flex-direction: column;
   justify-self: flex-end;
@@ -37,22 +43,33 @@ body{
   width: 80vw;
   margin: auto;
 }
-.currentInfo {
-display: flex;
-flex-direction: column;
-border: 1px;
-border-radius: 10%;
-width: 25%;
-align-items: center;
-justify-content:space-evenly;
-background-color: whitesmoke;
+.info {
+  display: flex;
+  flex-direction: column;
+  border: 1px;
+  border-radius: 10%;
+  width: 25%;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: whitesmoke;
+  text-align: center;
 }
-#temps.currentInfo {
+.buttons {
+  display: flex;
+  width: 40vw;
+  align-content: center;
+  justify-content: space-evenly;
+  margin-top: 1%;
+}
+a {
+  height: 100%;
+}
+#temps.info {
   display: grid;
   grid-template-rows: 3fr 1fr 1fr 1fr;
   text-align: center;
 }
-#temps.currentInfo h1{
+#temps.info h1 {
   font-size: 3em;
   border-color: black;
   border-style: solid;
@@ -66,23 +83,25 @@ background-color: whitesmoke;
   padding: 2%;
   min-height: 65vh;
 }
-img{
+img {
   height: 50%;
 }
-.nthHour img{
+.nthHour img {
   height: auto;
   justify-self: center;
   align-self: center;
 }
-.header{
-align-items: center;  
-display: flex;
-flex-direction: column;
+.header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1% 0%;
 }
-.hourly{
+.hourly {
   width: 80vw;
 }
-.nthHour{
+.nthHour {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   text-align: center;
@@ -91,38 +110,126 @@ flex-direction: column;
   border-bottom-width: 2px;
   background-color: whitesmoke;
 }
-.hourlyConditions{
+.nthHour p {
+  align-self: center;
+}
+.hourlyConditions {
   display: flex;
 }
-.nthHour.labels{
+.nthHour.labels {
   display: grid;
-  grid-template-columns: 1.05fr 0.949fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
-.nthHour.labels p{
+.nthHour.labels p {
   font-size: 1.3em;
 }
-#forecastTitle{
+#forecastTitle {
   text-align: center;
 }
-html body{
+html body {
   margin: 0px;
   height: 100%;
   width: 100%;
 }
-.dayByDay{
-display: grid;
-grid-template-rows: 1fr 1fr;
-justify-items: center;
-width: 100%;
+.dayByDay {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  width: 100%;
 }
-.highLow{
+.highLow {
   display: flex;
   justify-content: center;
   width: 100%;
 }
-.dayByDay h3{
+.dayByDay h3 {
   margin: 2%;
 }
-.currentInfo.daily h2{
+.currentInfo.daily h2 {
   margin: 2%;
+}
+
+@media only screen and (max-width: 1400px) {
+  img {
+    height: 25%;
+  }
+  .buttons {
+    width: 50vw;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .nthHour.labels p {
+    font-size: 1em;
+  }
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  #temps.info {
+    display: flex;
+  }
+  .info {
+    flex-direction: row;
+    margin: 2%;
+    width: inherit;
+  }
+  img {
+    height: 25%;
+  }
+  #conditions img {
+    height: auto;
+  }
+  #windAndRain h3 {
+    margin: inherit;
+  }
+  .buttons {
+    width: 60vw;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .hourly p {
+    font-size: 0.8em;
+  }
+  .nthHour.labels p {
+    font-size: 0.8em;
+  }
+  .nthHour img {
+    height: 75%;
+  }
+  .info {
+    flex-wrap: wrap;
+  }
+  #temps.info h3 {
+    flex: 1 0 100%;
+  }
+  #conditions.info h3 {
+    flex: 1 0 100%;
+  }
+  #conditions.info h2 {
+    flex: 1 0 100%;
+  }
+  .currentTemp {
+    flex: 1 0 100%;
+  }
+  .buttons {
+    width: 70vw;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .hourly {
+    width: 100%;
+  }
+  .hourly p {
+    font-size: 0.4em;
+  }
+  .nthHour.labels p{
+    font-size: 0.5em;
+  }
+  .buttons {
+  width: 100vw;
+  }
+  a h3 {
+    font-size: small;
+  }
 }

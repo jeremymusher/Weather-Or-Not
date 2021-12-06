@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Hourly({weather}) {
-    return (
+    return weather.location ? (
         <div className="hourly">
             <h3 id="forecastTitle">Today's Hourly Conditions in {weather.location.name}, {weather.location.region}</h3>
             <div className = "nthHour labels">
@@ -30,7 +30,14 @@ function Hourly({weather}) {
             )}
          )}
         </div>
-    );
+    ) : (
+        <div className="current">
+          <h1>
+            Sorry no location found with that postal code. Please try again with
+            another location.
+          </h1>
+        </div>
+    );   
 }
 
 export default Hourly;

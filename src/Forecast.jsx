@@ -5,7 +5,7 @@ import Hourly from './Hourly';
 import { Route } from "react-router";
 
 function Forecast({weather, getApi}) {
-    useEffect(getApi, [getApi]);
+    useEffect(getApi, []);
   
     return (
         weather &&

@@ -5,14 +5,13 @@ import React, { useState } from "react";
 
 function App() {
   const [weather, setWeather] = useState(null);
-  const url = `https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHER_API_KEY}`
 
   const getApi = () => {
     let searchedZip = localStorage.getItem("zipCode");
     if (searchedZip == null) {
     searchedZip = "80501"
     }
-    fetch(`${url}&q=${searchedZip}&days=3&aqi=yes`)
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=61fe33ab5ebe40fab45231457212211&q=${searchedZip}&days=3&aqi=yes`)
     .then((res) => res.json())
     .then((json) => {
       setWeather(json);
